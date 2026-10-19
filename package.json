@@ -1,0 +1,12 @@
+{
+  "name": "citation-context-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Class 7 citation extraction and context analysis",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "preview:mock": "node scripts/mock-preview.mjs"
+  }
+}

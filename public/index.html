@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore how legal citations are discussed in a supplied passage.">
+  <title>Citation Context Explorer · Class 7</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Class 7 · AI-powered version</p>
+      <h1>Citation Context Explorer</h1>
+      <p class="intro">Find legal citations. Read their context. Explore how the author uses them.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="input-title">
+      <h2 id="input-title">1. Add your passage</h2>
+      <label for="opinion">Court opinion or scholarly passage</label>
+      <textarea id="opinion" maxlength="60000" spellcheck="false" aria-describedby="input-hint" placeholder="Paste your text here…"></textarea>
+      <div class="input-meta"><p id="input-hint">Up to 60,000 characters. Common U.S. reporter citations only.</p><span id="characters">0 / 60,000</span></div>
+      <div class="actions">
+        <button id="extract" class="primary" type="button">Extract citations</button>
+        <button id="sample" type="button">Load sample passage</button>
+        <button id="clear" type="button">Clear</button>
+      </div>
+      <p id="sample-notice" class="sample-note" hidden>Sample passage: a teaching example written for this app, not an actual court opinion.</p>
+    </section>
+
+    <section aria-labelledby="results-title">
+      <div class="results-heading">
+        <div><h2 id="results-title">2. Explore the citations</h2><p id="summary">Extract citations to see their surrounding passages.</p></div>
+        <button id="analyze" class="primary" type="button" disabled>Analyze citations</button>
+      </div>
+      <p class="hint">Select up to five citations per request. The first five are selected automatically. Change the selection to analyze others.</p>
+      <p id="status" class="status" role="status" aria-live="polite">Ready for your text.</p>
+      <p id="error" class="error" role="alert" hidden></p>
+      <div id="results" aria-busy="false"></div>
+    </section>
+
+    <footer>
+      <p><strong>Read the text, check the interpretation.</strong> AI explanations and roles are tentative. This app analyzes the supplied text and does not independently verify cited authorities. Text matching may miss unusual citation formats.</p>
+      <p>Extraction stays in your browser. Clicking Analyze citations sends your text to the server; only selected surrounding passages are forwarded to OpenRouter and its selected free model provider. Do not submit confidential material. No visitor API key is needed.</p>
+    </footer>
+    <noscript><p>This app requires JavaScript to extract and analyze citations.</p></noscript>
+  </main>
+</body>
+</html>
